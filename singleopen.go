@@ -191,6 +191,7 @@ func (fsys *FS) KeepLast(n int) {
 		}
 		fsys.closer = make(chan *file, n)
 		go fsys.fileCloser()
+		return
 	}
 
 	if fsys.cache.MaxEntries < n {
